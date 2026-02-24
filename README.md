@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jeff Holcomb Portfolio
+
+Personal portfolio at [jeff-holcomb.com](https://jeff-holcomb.com) — lighting design and web development.
+
+## Structure
+
+- **/** — Homepage with positioning and links to both sections
+- **/lighting** — Lighting design bio, gallery, showreel placeholder, clients/tours, contact
+- **/development** — Web dev bio, projects, tech stack, GitHub
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Adding gallery images (Lighting page)
 
-## Learn More
+1. Add images to `public/` (e.g. `public/work-1.jpg`)
+2. In `app/lighting/page.tsx`, replace the placeholder divs with `next/image`:
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import Image from "next/image";
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+// In the gallery map:
+<Image
+  src="/work-1.jpg"
+  alt={item.artist}
+  fill
+  className="object-cover grayscale hover:grayscale-0 scale-100 hover:scale-105 transition-all duration-300"
+/>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Adding videos
+
+Replace the "Showreel Coming Soon" block in `app/lighting/page.tsx` with embedded YouTube/Vimeo iframes or a video element.
+
+### Updating content
+
+- **Bio**: Edit the paragraphs in `app/lighting/page.tsx` and `app/development/page.tsx`
+- **Clients/Tours**: Update the `selectedClients` and `selectedTours` arrays in `app/lighting/page.tsx`
+- **Projects**: Update the `projects` array in `app/development/page.tsx`
+- **Tech stack**: Update the `techStack` array in `app/development/page.tsx`
+- **GitHub**: Update the GitHub URL in `app/development/page.tsx` (currently `https://github.com/jeffholcomb`)
+
+### Domain setup (Namecheap → Vercel)
+
+1. Deploy to Vercel and import this repo
+2. In Vercel: Project → Settings → Domains → Add `jeff-holcomb.com`
+3. In Namecheap: Domain → Advanced DNS → Add the A/CNAME records Vercel provides
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
