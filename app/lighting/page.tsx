@@ -1,5 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
+import { ArtistCard } from "./ArtistCard";
+import { PlotImage } from "./PlotImage";
 
 export const metadata: Metadata = {
   title: "Lighting Design | Jeff Holcomb",
@@ -7,25 +10,40 @@ export const metadata: Metadata = {
     "Lighting designer and timecode programmer. Creating precise, musical, tour-ready lighting systems.",
 };
 
-const galleryImages = [
-  { artist: "Artist Name", tour: "Tour 2024", role: "Lighting Design & Programming" },
-  { artist: "Artist Name", tour: "Tour 2024", role: "Lighting Design & Programming" },
-  { artist: "Artist Name", tour: "Tour 2024", role: "Lighting Design & Programming" },
-  { artist: "Artist Name", tour: "Tour 2024", role: "Lighting Design & Programming" },
-  { artist: "Artist Name", tour: "Tour 2024", role: "Lighting Design & Programming" },
-  { artist: "Artist Name", tour: "Tour 2024", role: "Lighting Design & Programming" },
-];
+const vectorworksPlots = ["/vectorworks-1.jpg", "/vectorworks-2.jpg", "/vectorworks-3.jpg"];
+const depencePlots = ["/depence-1.jpg", "/depence-2.jpg", "/depence-3.jpg"];
 
-const selectedClients = [
-  "Plini",
-  "Animals As Leaders",
-  "Periphery",
-  "Thy Art Is Murder",
-];
-
-const selectedTours = [
-  "Plini — North America 2023",
-  "Animals As Leaders — EU 2022",
+const artistCategories = [
+  {
+    name: "Cannibal Corpse",
+    image: "/cannibal-corpse.jpg",
+    logo: "/cannibal-corpse-logo.png",
+    tours: ["North America 2024", "EU 2023"],
+  },
+  {
+    name: "Periphery",
+    image: "/periphery.jpg",
+    logo: "/periphery-logo.png",
+    tours: ["North America 2023", "EU 2022"],
+  },
+  {
+    name: "Plini",
+    image: "/plini.jpg",
+    logo: "/plini-logo.png",
+    tours: ["Summer Tour 2023", "North America 2022"],
+  },
+  {
+    name: "Thy Art Is Murder",
+    image: "/thy-art-is-murder.jpg",
+    logo: "/thy-art-is-murder-logo.png",
+    tours: ["North America 2024", "Australia 2023"],
+  },
+  {
+    name: "Steel Panther",
+    image: "/steel-panther.jpg",
+    logo: "/steel-panther-logo.png",
+    tours: ["North America 2024", "EU 2023"],
+  },
 ];
 
 export default function LightingPage() {
@@ -43,6 +61,13 @@ export default function LightingPage() {
 
       {/* Hero */}
       <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-16">
+        <Image
+          src="/me1.jpg"
+          alt="Jeff Holcomb"
+          width={360}
+          height={360}
+          className="rounded-full object-cover mb-8 border-2 border-zinc-700"
+        />
         <h1 className="text-5xl sm:text-6xl font-light tracking-wide">
           Jeff Holcomb
         </h1>
@@ -50,7 +75,7 @@ export default function LightingPage() {
           Lighting Designer & Timecode Programmer
         </p>
         <p className="mt-4 text-lg text-zinc-500 max-w-xl">
-          Creating precise, musical, tour-ready lighting systems.
+          Tours • Festivals • Live production
         </p>
       </section>
 
@@ -76,26 +101,60 @@ export default function LightingPage() {
         </div>
       </section>
 
-      {/* Selected Work */}
+      {/* Selected Work — Artist categories */}
       <section className="px-6 py-24">
         <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-12 text-center">
           Selected Work
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
-          {galleryImages.map((item, i) => (
-            <div
-              key={i}
-              className="group relative aspect-[4/3] bg-zinc-800 overflow-hidden"
-            >
-              {/* Placeholder - replace with next/image when you add real images */}
-              <div className="absolute inset-0 bg-zinc-700 group-hover:bg-zinc-600 transition-all duration-300 scale-100 group-hover:scale-105 grayscale group-hover:grayscale-0" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/60">
-                <span className="font-medium text-white">{item.artist}</span>
-                <span className="text-sm text-zinc-300">{item.tour}</span>
-                <span className="text-xs text-zinc-400 mt-1">{item.role}</span>
-              </div>
-            </div>
+        <div className="max-w-3xl mx-auto mb-20 overflow-hidden border border-zinc-950">
+          <Image
+            src="/me.jpg"
+            alt="Jeff Holcomb at the lighting console"
+            width={1024}
+            height={683}
+            className="w-full aspect-[3/2] object-cover contrast-[1.06] brightness-[0.98]"
+            sizes="(max-width: 768px) 100vw, 672px"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto space-y-24">
+          {artistCategories.map((artist) => (
+            <ArtistCard key={artist.name} artist={artist} />
           ))}
+        </div>
+      </section>
+
+      {/* Vectorworks & Depence */}
+      <section className="px-6 py-24 border-t border-zinc-800">
+        <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-16 text-center">
+          Vectorworks & Depence
+        </h2>
+        <div className="max-w-6xl mx-auto space-y-20">
+          <div>
+            <h3 className="text-lg text-zinc-400 mb-6">Vectorworks</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {vectorworksPlots.map((src, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-video bg-zinc-800 overflow-hidden rounded-lg"
+                >
+                  <PlotImage src={src} alt={`Vectorworks plot ${i + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg text-zinc-400 mb-6">Depence</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {depencePlots.map((src, i) => (
+                <div
+                  key={i}
+                  className="relative aspect-video bg-zinc-800 overflow-hidden rounded-lg"
+                >
+                  <PlotImage src={src} alt={`Depence plot ${i + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -109,32 +168,6 @@ export default function LightingPage() {
         </div>
       </section>
 
-      {/* Clients & Tours */}
-      <section className="px-6 py-24 max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16">
-          <div>
-            <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-8">
-              Selected Clients
-            </h2>
-            <ul className="space-y-2 text-zinc-300">
-              {selectedClients.map((client) => (
-                <li key={client}>{client}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-8">
-              Selected Tours
-            </h2>
-            <ul className="space-y-2 text-zinc-300">
-              {selectedTours.map((tour) => (
-                <li key={tour}>{tour}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
       {/* Contact */}
       <section className="px-6 py-24 border-t border-zinc-800">
         <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-8 text-center">
@@ -143,10 +176,10 @@ export default function LightingPage() {
         <div className="max-w-xl mx-auto text-center space-y-4">
           <p className="text-zinc-300">
             <a
-              href="mailto:hello@jeff-holcomb.com"
+              href="mailto:jeffholcomb@proton.me"
               className="hover:text-white transition-colors underline underline-offset-4"
             >
-              hello@jeff-holcomb.com
+              jeffholcomb@proton.me
             </a>
           </p>
           <p className="text-sm text-zinc-500">

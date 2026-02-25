@@ -84,7 +84,9 @@ export default function DevelopmentPage() {
         <div className="space-y-12">
           {projects.map((project, i) => (
             <article key={i} className="border-b border-zinc-800 pb-12">
-              <h3 className="text-xl font-medium text-white">{project.title}</h3>
+              <h3 className="text-xl font-medium text-white">
+                {project.title}
+              </h3>
               <p className="mt-2 text-zinc-400">{project.description}</p>
               <a
                 href={project.link}
@@ -119,10 +121,10 @@ export default function DevelopmentPage() {
         <div className="max-w-xl mx-auto text-center space-y-6">
           <p className="text-zinc-300">
             <a
-              href="mailto:hello@jeff-holcomb.com"
+              href="mailto:jeffholcomb@proton.me"
               className="hover:text-white transition-colors underline underline-offset-4"
             >
-              hello@jeff-holcomb.com
+              jeffholcomb@proton.me
             </a>
           </p>
           <a

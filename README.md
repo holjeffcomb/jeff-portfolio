@@ -18,22 +18,14 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Customization
 
-### Adding gallery images (Lighting page)
+### Adding artist images (Lighting page)
 
-1. Add images to `public/` (e.g. `public/work-1.jpg`)
-2. In `app/lighting/page.tsx`, replace the placeholder divs with `next/image`:
+Add to `public/` with these names (or update paths in `artistCategories`):
 
-```tsx
-import Image from "next/image";
+- Main photo: `cannibal-corpse.jpg`, `periphery.jpg`, `plini.jpg`, `thy-art-is-murder.jpg`, `steel-panther.jpg`
+- Band logos: `cannibal-corpse-logo.png`, `periphery-logo.png`, etc.
 
-// In the gallery map:
-<Image
-  src="/work-1.jpg"
-  alt={item.artist}
-  fill
-  className="object-cover grayscale hover:grayscale-0 scale-100 hover:scale-105 transition-all duration-300"
-/>
-```
+The site uses placeholders until the files exist. When images load, they display; otherwise a gray placeholder shows.
 
 ### Adding videos
 
