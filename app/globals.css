@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  --background: #1a1e22;
   --foreground: #fafafa;
+  --gunmetal: #1a1e22;
+  --gunmetal-light: #242a30;
+  --gunmetal-border: #2d3339;
 }
 
 @theme inline {
@@ -11,7 +14,7 @@
 }
 
 body {
-  background: var(--background);
+  background: #0d0f12;
   color: var(--foreground);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;

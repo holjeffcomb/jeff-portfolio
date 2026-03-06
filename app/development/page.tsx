@@ -36,7 +36,7 @@ const techStack = [
 
 export default function DevelopmentPage() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-[#252a30] via-[#1a1e22] to-[#0d0f12] text-white">
       {/* Back link */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6">
         <Link
