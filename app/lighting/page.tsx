@@ -2,20 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ArtistCard } from "./ArtistCard";
-import { PlotImage } from "./PlotImage";
 
 export const metadata: Metadata = {
   title: "Lighting Design | Jeff Holcomb",
   description:
     "Lighting designer and timecode programmer. Creating precise, musical, tour-ready lighting systems.",
 };
-
-const vectorworksPlots = [
-  "/vectorworks-1.jpg",
-  "/vectorworks-2.jpg",
-  "/vectorworks-3.jpg",
-];
-const depencePlots = ["/depence-1.jpg", "/depence-2.jpg", "/depence-3.jpg"];
 
 const artistCategories = [
   {
@@ -212,41 +204,6 @@ export default function LightingPage() {
               className="w-full object-cover"
               unoptimized
             />
-          </div>
-        </div>
-      </section>
-
-      {/* Vectorworks & Depence */}
-      <section className="px-6 py-24 border-t border-zinc-800">
-        <h2 className="text-sm uppercase tracking-widest text-zinc-500 mb-16 text-center">
-          Vectorworks & Depence
-        </h2>
-        <div className="max-w-6xl mx-auto space-y-20">
-          <div>
-            <h3 className="text-lg text-zinc-400 mb-6">Vectorworks</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {vectorworksPlots.map((src, i) => (
-                <div
-                  key={i}
-                  className="relative aspect-video bg-zinc-800 overflow-hidden rounded-lg"
-                >
-                  <PlotImage src={src} alt={`Vectorworks plot ${i + 1}`} />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="text-lg text-zinc-400 mb-6">Depence</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {depencePlots.map((src, i) => (
-                <div
-                  key={i}
-                  className="relative aspect-video bg-zinc-800 overflow-hidden rounded-lg"
-                >
-                  <PlotImage src={src} alt={`Depence plot ${i + 1}`} />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
