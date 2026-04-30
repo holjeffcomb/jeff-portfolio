@@ -2,10 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Jeff Holcomb | Technical Creative",
+  title: "Jeff Holcomb · Lighting Designer",
   description:
-    "Lighting design, show systems, and web development. Designing systems for live and digital experiences.",
-  metadataBase: new URL("https://jeff-holcomb.com"),
+    "Lighting design, programming, and operation. Tours, festivals, and live production.",
+  metadataBase: new URL("https://jeffholcomblights.com"),
+  openGraph: {
+    title: "Jeff Holcomb · Lighting Designer",
+    description:
+      "Lighting design, programming, and operation. Tours, festivals, and live production.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -15,9 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
