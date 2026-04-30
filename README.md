@@ -34,7 +34,7 @@ Drop JPG/PNG files into `public/` and reference them as `/filename.jpg` in `page
 ## Domain Setup (Namecheap → Vercel)
 
 1. Deploy this repo to Vercel
-2. Vercel: Project → Settings → Domains → add `jeff-holcomb.com`
+2. Vercel: Project → Settings → Domains → add `jeffholcomblights.com`
 3. Namecheap: Domain → Advanced DNS → add the records Vercel provides
 
 ## Stack

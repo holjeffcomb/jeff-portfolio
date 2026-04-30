@@ -135,12 +135,12 @@ export default function Home() {
                     />
                   </div>
                   <figcaption className="mt-4 flex items-baseline justify-between gap-4">
-                    <h3 className="font-serif text-base md:text-lg">
+                    <h3 className="font-serif text-base md:text-lg shrink-0">
                       {v.artist}
                       <span className="text-[#8a857a]"> · {v.title}</span>
                     </h3>
                     {v.note && (
-                      <span className="text-[11px] uppercase tracking-wider text-[#8a857a] whitespace-nowrap">
+                      <span className="text-[11px] uppercase tracking-wider text-[#8a857a] text-right">
                         {v.note}
                       </span>
                     )}
