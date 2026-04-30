@@ -92,7 +92,7 @@ export default function Home() {
                 alt="Jeff Holcomb"
                 width={280}
                 height={280}
-                className="rounded-full object-cover border border-[#26221c]"
+                className="rounded-full object-cover border border-[#26221c] w-40 h-40 md:w-[280px] md:h-[280px] mx-auto md:mx-0"
                 priority
               />
               <div>
