@@ -1,12 +1,14 @@
-# Jeff Holcomb Portfolio
+# Jeff Holcomb — Lighting Designer
 
-Personal portfolio at [jeff-holcomb.com](https://jeff-holcomb.com) — lighting design and web development.
+Personal portfolio at [jeff-holcomb.com](https://jeffholcomblights.com). One-page site focused on lighting design, programming, and operation work.
 
-## Structure
+## Sections
 
-- **/** — Homepage with positioning and links to both sections
-- **/lighting** — Lighting design bio, gallery, showreel placeholder, clients/tours, contact
-- **/development** — Web dev bio, projects, tech stack, GitHub
+- **Hero** — Name, tagline, status indicator
+- **About** — Bio with console photo
+- **Visualizations** — YouTube embeds of pre-visualized programming
+- **Selected Clients** — Past artist/tour collaborations as a thumbnail grid
+- **Inquiries** — Email CTA for booking work
 
 ## Getting Started
 
@@ -14,37 +16,29 @@ Personal portfolio at [jeff-holcomb.com](https://jeff-holcomb.com) — lighting 
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Then open [http://localhost:3000](http://localhost:3000).
 
-## Customization
+## Updating Content
 
-### Adding artist images (Lighting page)
+All content lives in `app/page.tsx`:
 
-Add to `public/` with these names (or update paths in `artistCategories`):
+- **`visualizations`** — Add YouTube videos by adding objects with `id`, `artist`, `title`, and optional `note`
+- **`clients`** — Add/remove past clients (image, name, photographer)
+- **Bio** — Edit the paragraphs in the About section
+- **Inquiries** — Update the booking copy and email address
 
-- Main photo: `cannibal-corpse.jpg`, `periphery.jpg`, `plini.jpg`, `thy-art-is-murder.jpg`, `steel-panther.jpg`
-- Band logos: `cannibal-corpse-logo.png`, `periphery-logo.png`, etc.
+## Adding Images
 
-The site uses placeholders until the files exist. When images load, they display; otherwise a gray placeholder shows.
+Drop JPG/PNG files into `public/` and reference them as `/filename.jpg` in `page.tsx`.
 
-### Adding videos
+## Domain Setup (Namecheap → Vercel)
 
-Replace the "Showreel Coming Soon" block in `app/lighting/page.tsx` with embedded YouTube/Vimeo iframes or a video element.
+1. Deploy this repo to Vercel
+2. Vercel: Project → Settings → Domains → add `jeff-holcomb.com`
+3. Namecheap: Domain → Advanced DNS → add the records Vercel provides
 
-### Updating content
+## Stack
 
-- **Bio**: Edit the paragraphs in `app/lighting/page.tsx` and `app/development/page.tsx`
-- **Clients/Tours**: Update the `selectedClients` and `selectedTours` arrays in `app/lighting/page.tsx`
-- **Projects**: Update the `projects` array in `app/development/page.tsx`
-- **Tech stack**: Update the `techStack` array in `app/development/page.tsx`
-- **GitHub**: Update the GitHub URL in `app/development/page.tsx` (currently `https://github.com/jeffholcomb`)
-
-### Domain setup (Namecheap → Vercel)
-
-1. Deploy to Vercel and import this repo
-2. In Vercel: Project → Settings → Domains → Add `jeff-holcomb.com`
-3. In Namecheap: Domain → Advanced DNS → Add the A/CNAME records Vercel provides
-
-## Deploy on Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+- Next.js (App Router)
+- Tailwind CSS v4
+- Deployed on Vercel
