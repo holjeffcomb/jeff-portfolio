@@ -57,7 +57,7 @@ export default function Home() {
       {/* Top bar */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0f0e0c]/70 border-b border-[#26221c]/60">
         <div className="max-w-6xl mx-auto px-6 md:px-10 h-14 flex items-center justify-between">
-          <a href="#top" className="font-serif text-base tracking-wide">
+          <a href="#top" className="text-base font-medium tracking-tight">
             Jeff Holcomb
           </a>
           <div className="flex items-center gap-3">
@@ -96,13 +96,13 @@ export default function Home() {
                 priority
               />
               <div>
-                <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-light tracking-[-0.02em] leading-[0.95]">
+                <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-normal tracking-[-0.02em] leading-[0.95]">
                   Jeff Holcomb
                 </h1>
-                <p className="mt-8 text-lg md:text-xl text-[#c9c2b3]">
+                <p className="mt-8 text-lg md:text-xl text-[#c9c2b3] font-light">
                   Lighting design, programming, and operation.
                 </p>
-                <p className="mt-3 text-base text-[#8a857a]">
+                <p className="mt-3 text-base text-[#8a857a] font-light">
                   Tours, festivals, and live production.
                 </p>
               </div>
@@ -135,9 +135,9 @@ export default function Home() {
                     />
                   </div>
                   <figcaption className="mt-4 flex items-baseline justify-between gap-4">
-                    <h3 className="font-serif text-base md:text-lg shrink-0">
+                    <h3 className="text-sm md:text-base shrink-0 tracking-tight font-medium">
                       {v.artist}
-                      <span className="text-[#8a857a]"> · {v.title}</span>
+                      <span className="text-[#8a857a] font-light"> · {v.title}</span>
                     </h3>
                     {v.note && (
                       <span className="text-[11px] uppercase tracking-wider text-[#8a857a] text-right">
@@ -168,7 +168,7 @@ export default function Home() {
               />
             </div>
             <div className="space-y-5 text-[#c9c2b3] leading-relaxed">
-              <p className="font-serif text-2xl md:text-3xl text-[#ece7da] leading-snug">
+              <p className="text-2xl md:text-3xl text-[#ece7da] leading-snug tracking-[-0.02em] font-light">
                 I work with touring artists on lighting design, programming,
                 and operation.
               </p>
@@ -203,7 +203,7 @@ export default function Home() {
                     {c.photographer}
                   </span>
                 </div>
-                <p className="mt-3 font-serif text-base text-[#ece7da]">
+                <p className="mt-3 text-sm text-[#ece7da] tracking-tight font-medium">
                   {c.name}
                 </p>
               </li>
@@ -216,7 +216,7 @@ export default function Home() {
       <section id="contact" className="border-t border-[#26221c]">
         <div className="max-w-3xl mx-auto px-6 md:px-10 py-28 md:py-36 text-center">
           <p className={`${sectionLabel} mb-6`}>Contact</p>
-          <h2 className="font-serif text-4xl md:text-6xl font-light leading-[1.05] tracking-[-0.01em]">
+          <h2 className="font-display text-5xl md:text-7xl font-normal leading-[1.05] tracking-[-0.02em]">
             Get in touch.
           </h2>
           <p className="mt-8 text-[#c9c2b3] leading-relaxed max-w-xl mx-auto">
