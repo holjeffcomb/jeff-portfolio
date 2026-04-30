@@ -1,6 +1,6 @@
 # Jeff Holcomb — Lighting Designer
 
-Personal portfolio at [jeff-holcomb.com](https://jeff-holcomb.com). One-page site focused on lighting design, programming, and operation work.
+Personal portfolio at [jeff-holcomb.com](https://jeffholcomblights.com). One-page site focused on lighting design, programming, and operation work.
 
 ## Sections
 
