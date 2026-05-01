@@ -14,6 +14,12 @@ const visualizations = [
     title: "Follow Your Ghost",
     note: "Programmed in MA3, Visualized in Depence",
   },
+  {
+    id: "UUOMvxMNICU",
+    artist: "Periphery",
+    title: "Atropos",
+    note: "Programmed in MA3, Visualized in Depence",
+  },
 ];
 
 const clients = [
